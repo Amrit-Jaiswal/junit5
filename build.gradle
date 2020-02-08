@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //junit 5 dependency
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.6.0'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.6.0'
+
+    //to run older junit test case. e.g junit 4 and earlier
+    testCompile group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.6.0'
+
+    //junit 4 dependency
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+test{
+    useJUnitPlatform()
+}
